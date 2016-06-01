@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+
+<BorderPane fx:id="pane" prefHeight="1025.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.bsu.zinkovich.OpenCVController">
+    <center>
+      <VBox>
+         <children>
+              <ImageView fx:id="imageView" fitHeight="500" fitWidth="700" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+            <ImageView fx:id="originalImageView" fitHeight="500" fitWidth="700" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+    </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onLoadImageButtonPressed" text="Load" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Filters">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onBinarizateButtonPressed" text="Binary" />
+              <MenuItem mnemonicParsing="false" onAction="#onGrayscaleButtonPressed" text="Grayscale" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Graphics">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onShowHistogramButtonPressed" text="Histogram" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Noise">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onRemoveBinaryNoiseButtonPressed" text="Binary" />
+                  <MenuItem mnemonicParsing="false" onAction="#onRemoveGrayscaleAverageNoiseButtonPressed" text="Grayscale Average" />
+                  <MenuItem mnemonicParsing="false" onAction="#onRemoveGrayscaleMedianNoiseButtonPressed" text="Grayscale Median" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Border">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onBinaryBorderButtonPressed" text="Binary" />
+                  <MenuItem mnemonicParsing="false" onAction="#onCannyBorderButtonPressed" text="Canny" />
+                  <MenuItem mnemonicParsing="false" onAction="#onLaplacianBorderButtonPressed" text="Laplacian" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Morphology">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onErodeButtonPressed" text="Erode" />
+                  <MenuItem mnemonicParsing="false" onAction="#onDilateButtonPressed" text="Dilate" />
+                  <MenuItem mnemonicParsing="false" onAction="#onOpeningButtonPressed" text="Opening" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClosingButtonPressed" text="Closing" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Segmentation">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onSegmentationButtonPressed" text="Watershed" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Recognition">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onRecognizeButtonPressed" text="Recognise" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Undo">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onShowImageButtonPressed" text="Undo" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
